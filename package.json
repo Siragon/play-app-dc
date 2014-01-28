@@ -4,8 +4,11 @@
   "version": "0.1",
   "main": "index.html",
   "window": {
-    "toolbar": false,
-    "width": 660,
-    "height": 500
+    "toolbar": true,
+    "width": 1024,
+    "height": 768,
+	"frame": true,
+	"kiosk": false,
+	"as_desktop": true
   }
 }

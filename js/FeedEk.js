@@ -50,20 +50,14 @@
 					}
                     if (def.ShowDesc) {
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
-							s += '<div class="cbp_tmlabel"><h2><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></h2>";
+							s += '<div class="cbp_tmlabel"><h2><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title.replace("Siragon","") + "</a></h2>";
                             s += '<p>' + item.content.substr(0, def.DescCharacterLimit) + "...</p>";
                         }
                         else {
-							s += '<div class="cbp_tmlabel"><h2 class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></h2>";
+							s += '<div class="cbp_tmlabel"><h2 class="itemTitle"><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title.replace("Siragon","") + "</a></h2>";
                             s += '<p>' + item.content + "</p></div></li>";
                         }
                     }
-					
-					
-
-					var $xml = $( $.parseXML(item.content) ),
-						$span = $xml.find( "span" )[1].textContent;
-					console.log($span);
                 });
                 $("#" + id).append('<ul class="cbp_tmtimeline">' + s + "</ul>");
             }
