@@ -130,7 +130,7 @@ var username = "Siragon-Committer"
 }); */
 
 user.orgEvents(username, orgname, function(err, events) {
-	console.log(events);
+	console.log(JSON.stringify(events));
 	var id = "main";
 	var s = "";
                 $("#" + id).empty();
@@ -146,7 +146,7 @@ user.orgEvents(username, orgname, function(err, events) {
 						s += '			<div class="infos flip-container" ontouchstart="this.classList.toggle(\'hover\');">';
 						s += '					<div class="flipper">';
 						s += '						<div class="front">';
-						s += '						<img src="http://s3.amazonaws.com/production_tiwe/candidates/avatars/000/000/100/thumb/Gary_Monk.png?2013" alt="" title="by tresMunkeys" />';
+						s += '						<img src="'+item.actor.avatar_url+'" alt="" title="'+item.actor.gravatar+'" />';
 						s += '						</div>';
 						s += '						<div class="back">';
 						s += '						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>' + dt.toLocaleDateString() + '</span> <span>' + dt.getHours() +':'+ dt.getMinutes()  + '</span></time>';
@@ -154,7 +154,7 @@ user.orgEvents(username, orgname, function(err, events) {
 						s += '					</div>';
 						s += '				<a href="http://twitter.com/webodream" class="sprite twitter">@webodream</a>';
 						s += '				<a href="http://www.facebook.com/groups/115089745169149" class="sprite facebook">depot.webdesigner</a>';
-						s += '				<a href="http://github.com/arbaoui-mehdi" class="sprite github">@arbaoui-mehdi</a>';
+						s += '				<a href="https://github.com/'+item.actor.login+'" class="sprite github">'+item.actor.login+'</a>';
 						s += '			</div>';
 						s += '		</li>';
 						s += '	</ul>';
